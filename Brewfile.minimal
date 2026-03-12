@@ -1,0 +1,23 @@
+# homebrew-cli-toolbelt: minimal tier
+# ~12 tools. installs in < 2 minutes.
+# "just make my terminal not suck"
+#
+# install: brew bundle --file=Brewfile.minimal
+
+# === modern CLI replacements ===
+brew "bat"           # cat with syntax highlighting
+brew "eza"           # ls with git status + icons
+brew "fd"            # find with simpler syntax
+brew "ripgrep"       # grep, 10-100x faster
+brew "zoxide"        # cd that learns your habits
+brew "git-delta"     # beautiful git diffs
+
+# === core tools ===
+brew "fzf"           # fuzzy finder for everything
+brew "lazygit"       # git TUI that teaches you git
+brew "btop"          # gorgeous system monitor
+brew "starship"      # cross-shell prompt
+brew "tldr"          # simplified man pages
+
+# === editor ===
+brew "micro"         # GUI-like terminal editor (Ctrl+S to save)

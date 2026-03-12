@@ -1,0 +1,26 @@
+name: Test Brewfiles
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Weekly Monday 9am UTC — catch upstream homebrew-core removals
+    - cron: '0 9 * * 1'
+
+jobs:
+  validate:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        brewfile: [Brewfile, Brewfile.minimal, Brewfile.intermediate]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Update Homebrew
+        run: brew update
+
+      - name: Validate formulae in ${{ matrix.brewfile }}
+        run: brew bundle check --file=${{ matrix.brewfile }}

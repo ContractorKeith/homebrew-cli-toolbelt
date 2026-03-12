@@ -1,0 +1,43 @@
+# homebrew-cli-toolbelt: intermediate tier
+# ~25 tools. everything in minimal + productivity layer.
+# "i'm ready to go deeper"
+#
+# install: brew bundle --file=Brewfile.intermediate
+
+# === modern CLI replacements ===
+brew "bat"           # cat with syntax highlighting
+brew "eza"           # ls with git status + icons
+brew "fd"            # find with simpler syntax
+brew "ripgrep"       # grep, 10-100x faster
+brew "zoxide"        # cd that learns your habits
+brew "git-delta"     # beautiful git diffs
+brew "dust"          # du with visual bar graphs
+brew "duf"           # df with colorful tables
+brew "sd"            # sed with sane syntax
+
+# === core tools ===
+brew "fzf"           # fuzzy finder for everything
+brew "lazygit"       # git TUI that teaches you git
+brew "btop"          # gorgeous system monitor
+brew "starship"      # cross-shell prompt
+brew "atuin"         # better shell history with search + sync
+brew "tldr"          # simplified man pages
+brew "gh"            # GitHub CLI
+brew "jq"            # JSON Swiss Army knife
+brew "just"          # modern make alternative
+
+# === TUI apps ===
+brew "yazi"          # fast file manager with previews
+brew "zellij"        # beginner-friendly terminal multiplexer
+
+# === shell enhancements ===
+brew "zsh-autosuggestions"       # fish-like ghost text suggestions
+brew "zsh-syntax-highlighting"   # invalid commands turn red
+
+# === editors ===
+brew "micro"         # GUI-like terminal editor (Ctrl+S to save)
+brew "helix"         # modern modal editor with built-in LSP
+
+# === extras ===
+brew "glow"          # render markdown in terminal
+brew "httpie"        # human-friendly HTTP client
