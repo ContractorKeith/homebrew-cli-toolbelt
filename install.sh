@@ -93,7 +93,7 @@ fi
 header "Step 3 — Installing $TIER tier"
 
 info "Running: brew bundle --file=$BREWFILE"
-brew bundle --file="$BREWFILE"
+brew bundle --file="$BREWFILE" || warn "Some formulae reported issues — check output above (tools may still have installed)"
 success "Brew bundle complete"
 
 # ---------- step 4: nerd font ----------
@@ -206,30 +206,30 @@ if ask "Configure shell integrations (fzf, zoxide, starship, atuin)?"; then
       echo '# shell integrations (auto-detected at install time)'
       if command -v fzf &>/dev/null; then
         echo 'eval "$(fzf --zsh)"'
-        success "  fzf integration added"
+        success "  fzf integration added" >&2
       else
-        warn "  fzf not found — skipping integration"
+        warn "  fzf not found — skipping integration" >&2
       fi
 
       if command -v zoxide &>/dev/null; then
         echo 'eval "$(zoxide init zsh)"'
-        success "  zoxide integration added"
+        success "  zoxide integration added" >&2
       else
-        warn "  zoxide not found — skipping integration"
+        warn "  zoxide not found — skipping integration" >&2
       fi
 
       if command -v starship &>/dev/null; then
         echo 'eval "$(starship init zsh)"'
-        success "  starship integration added"
+        success "  starship integration added" >&2
       else
-        warn "  starship not found — skipping integration"
+        warn "  starship not found — skipping integration" >&2
       fi
 
       if command -v atuin &>/dev/null; then
         echo 'eval "$(atuin init zsh)"'
-        success "  atuin integration added"
+        success "  atuin integration added" >&2
       else
-        warn "  atuin not found — skipping integration"
+        warn "  atuin not found — skipping integration" >&2
       fi
 
       echo "$INTEGRATION_MARKER_END"

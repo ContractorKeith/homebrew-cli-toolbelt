@@ -97,30 +97,30 @@ else
     echo '# shell integrations (only for tools detected at setup time)'
     if command -v fzf &>/dev/null; then
       echo 'eval "$(fzf --zsh)"'
-      info "fzf detected — integration added"
+      info "fzf detected — integration added" >&2
     else
-      warn "fzf not found — skipping"
+      warn "fzf not found — skipping" >&2
     fi
 
     if command -v zoxide &>/dev/null; then
       echo 'eval "$(zoxide init zsh)"'
-      info "zoxide detected — integration added"
+      info "zoxide detected — integration added" >&2
     else
-      warn "zoxide not found — skipping"
+      warn "zoxide not found — skipping" >&2
     fi
 
     if command -v starship &>/dev/null; then
       echo 'eval "$(starship init zsh)"'
-      info "starship detected — integration added"
+      info "starship detected — integration added" >&2
     else
-      warn "starship not found — skipping"
+      warn "starship not found — skipping" >&2
     fi
 
     if command -v atuin &>/dev/null; then
       echo 'eval "$(atuin init zsh)"'
-      info "atuin detected — integration added"
+      info "atuin detected — integration added" >&2
     else
-      warn "atuin not found — skipping"
+      warn "atuin not found — skipping" >&2
     fi
 
     echo "$INTEGRATION_MARKER_END"
